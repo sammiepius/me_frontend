@@ -1,0 +1,19 @@
+/* @tailwind base;
+@tailwind components; */
+/* @tailwind utilities; */
+
+
+/* *{
+    scroll-behavior: smooth;
+}
+.card-item-div {
+    transition: all 0.2s;
+
+}
+.card-item-div:hover{
+    background-image: url(../assets/movie.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+} */

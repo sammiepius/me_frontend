@@ -1,0 +1,50 @@
+* {
+  scroll-behavior: smooth;
+}
+.card-item-div-book {
+  transition: all 0.2s;
+}
+.card-item-div-show {
+  transition: all 0.2s;
+}
+.card-item-div-music {
+  transition: all 0.2s;
+}
+.card-item-div-photo {
+  transition: all 0.2s;
+}
+.card-item-div-show:hover {
+  background-image: url(../assets/movie.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.card-item-div-music:hover {
+  background-image: url(../assets/music.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.card-item-div-photo:hover {
+  background-image: url(../assets/photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.card-item-div-book:hover {
+  background-image: url(../assets/book.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.card-item-div:hover {
+  background-image: url(../assets/movie.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
