@@ -14,6 +14,11 @@ export default function Login() {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(login);
+  };
+
   return (
     <div>
       <FaArrowLeft
@@ -55,7 +60,7 @@ export default function Login() {
                   <input
                     // id="email"
                     name="email"
-                    type="email"
+                    // type="email"
                     // autocomplete="email"
                     onChange={handleInput}
                     // value={names.email}
@@ -114,7 +119,8 @@ export default function Login() {
               <div>
                 <button
                   class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  onClick={() => navigate('/home')}>
+                  // onClick={() => navigate('/home')}
+                  onClick={handleSubmit}>
                   Sign in
                 </button>
               </div>
