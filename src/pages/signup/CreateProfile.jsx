@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import './createprofile.css';
 import { FaArrowLeft } from 'react-icons/fa';
-import user_icon from '../../assets/person.png';
-import email_icon from '../../assets/email.png';
 import logo from '../../assets/logo.jpg';
 import password_icon from '../../assets/password.png';
 import { useNavigate } from 'react-router-dom';
@@ -11,49 +8,7 @@ export default function CreateProfile() {
   const navigate = useNavigate();
 
   return (
-    // <div>
-    //   <FaArrowLeft
-    //     style={{
-    //       color: 'black',
-    //       marginTop: '10px',
-    //       width: '100px',
-    //       cursor: 'pointer',
-    //     }}
-    //     onClick={() => navigate(-1)}
-    //   />
-    //   <div className="container">
-    //     <div className="header">
-    //       <div className="text">create profile</div>
-    //       <div className="underline"></div>
-    //     </div>
-    //     <div className="inputs">
-    //       <div className="input">
-    //         <img src={user_icon} alt="" />
-    //         <input type="text" placeholder="name" />
-    //       </div>
-    //       <div className="input">
-    //         <img src={email_icon} alt="" />
-    //         <input type="email" placeholder="email" />
-    //       </div>
-    //       <div className="input">
-    //         <img src={password_icon} alt="" />
-    //         <input type="password" placeholder="password" />
-    //       </div>
-    //     </div>
-    //     <div className="forgot-password">
-    //       would you rather ?{' '}
-    //       <span onClick={() => navigate('/login')}>login</span>
-    //     </div>
-    //     <div className="submit-container">
-    //       <div
-    //         className="submit"
-    //         // onClick={()=>setAction("Sign Up")}
-    //       >
-    //         Sign Up
-    //       </div>
-    //     </div>
-    //   </div>
-    // <div>
+   
     <div>
       <FaArrowLeft
         style={{
@@ -66,7 +21,7 @@ export default function CreateProfile() {
       />
       <div class="min-h-screen bg-gray-50 flex flex-col justify-center  sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-          <img class="mx-auto h-10 w-auto" src={logo} alt="Workflow" />
+          <img class="mx-auto h-15 w-auto" src={logo} alt="Workflow" />
           <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Create a new account
           </h2>

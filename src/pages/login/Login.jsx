@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import email_icon from '../../assets/email.png';
-import './login.css';
+// import './login.css';
 import password_icon from '../../assets/password.png';
 import { useNavigate } from 'react-router-dom';
 
