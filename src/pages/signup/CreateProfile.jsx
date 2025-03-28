@@ -5,10 +5,17 @@ import password_icon from '../../assets/password.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function CreateProfile() {
+  const [values, setValues] = useState({
+    names: '',
+    username: '',
+    password: '',
+    comfirm_password: '',
+  });
+
+  
   const navigate = useNavigate();
 
   return (
-   
     <div>
       <FaArrowLeft
         style={{
