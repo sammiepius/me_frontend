@@ -16,23 +16,26 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate('/home')
+
     console.log(login);
   };
 
   return (
-    <div>
-      <FaArrowLeft
-        style={{
-          color: 'black',
-          marginTop: '10px',
-          width: '100px',
-          cursor: 'pointer',
-        }}
-        onClick={() => navigate(-1)}
-      />
+ 
       <div class="min-h-screen bg-gray-100 flex flex-col justify-center lg:px-8">
+        {' '}
+        <FaArrowLeft
+          style={{
+            color: 'black',
+            marginTop: '10px',
+            width: '100px',
+            cursor: 'pointer',
+          }}
+          onClick={() => navigate(-1)}
+        />
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-          {login.email}- {login.password}
+          {login.email}
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account
           </h2>
@@ -46,7 +49,6 @@ export default function Login() {
             </a>
           </p>
         </div>
-
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <form class="space-y-6">
@@ -120,7 +122,8 @@ export default function Login() {
                 <button
                   class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   // onClick={() => navigate('/home')}
-                  onClick={handleSubmit}>
+                  onClick={handleSubmit}
+                >
                   Sign in
                 </button>
               </div>
@@ -176,6 +179,5 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

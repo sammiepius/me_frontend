@@ -22,23 +22,24 @@ export default function CreateProfile() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <FaArrowLeft
-        style={{
-          color: 'black',
-          marginTop: '10px',
-          width: '100px',
-          cursor: 'pointer',
-        }}
-        onClick={() => navigate(-1)}
-      />
       <div class="min-h-screen bg-gray-50 flex flex-col justify-center  sm:px-6 lg:px-8">
+        {' '}
+        <FaArrowLeft
+          style={{
+            color: 'black',
+            marginTop: '10px',
+            width: '100px',
+            cursor: 'pointer',
+          }}
+          onClick={() => navigate(-1)}
+        />
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
           <img class="mx-auto h-15 w-auto" src={logo} alt="Workflow" />
           <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Create a new account
           </h2>
-          {values.names}-{values.username}-{values.comfirm_password}-{values.password}-{values.email}
+          {values.names}-{values.username}-{values.comfirm_password}-
+          {values.password}-{values.email}
           <p class="mt-2 text-center text-sm leading-6 text-gray-500 ">
             Or
             <a
@@ -49,7 +50,6 @@ export default function CreateProfile() {
             </a>
           </p>
         </div>
-
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <form method="POST" action="#">
@@ -173,6 +173,5 @@ export default function CreateProfile() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
