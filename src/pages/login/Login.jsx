@@ -35,7 +35,7 @@ export default function Login() {
           onClick={() => navigate(-1)}
         />
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-          {login.email}
+         
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account
           </h2>
@@ -62,10 +62,7 @@ export default function Login() {
                   <input
                     // id="email"
                     name="email"
-                    // type="email"
-                    // autocomplete="email"
                     onChange={handleInput}
-                    // value={names.email}
                     required
                     class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Enter your email address"
@@ -84,9 +81,7 @@ export default function Login() {
                     // id="password"
                     name="password"
                     type="password"
-                    // autocomplete="current-password"
                     onChange={handleInput}
-                    // value={names.firstName}
                     required
                     class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="Enter your password"
