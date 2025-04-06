@@ -38,8 +38,6 @@ export default function CreateProfile() {
           <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Create a new account
           </h2>
-          {values.names}-{values.username}-{values.comfirm_password}-
-          {values.password}-{values.email}
           <p class="mt-2 text-center text-sm leading-6 text-gray-500 ">
             Or
             <a
