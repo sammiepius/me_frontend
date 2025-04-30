@@ -7,6 +7,8 @@ import Home from './components/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@coreui/coreui/dist/css/coreui.min.css';
 import Profile from './components/Profile';
+import Music from './components/music';
+import Books from './components/books';
 
 // import './App.css'
 
@@ -25,6 +27,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/create" element={<CreateProfile />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/shows" element={<Music />} />
+          <Route path="/photo" element={<Books />} />
         </Routes>
       </div>
     </Router>
