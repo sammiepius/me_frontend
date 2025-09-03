@@ -9,6 +9,8 @@ import '@coreui/coreui/dist/css/coreui.min.css';
 import Profile from './components/Profile';
 import Music from './components/music';
 import Books from './components/books';
+import Photo from './components/photo';
+import Shows from './components/shows';
 
 // import './App.css'
 
@@ -29,8 +31,8 @@ function App() {
           <Route path="/create" element={<CreateProfile />} />
           <Route path="/music" element={<Music />} />
           <Route path="/books" element={<Books />} />
-          <Route path="/shows" element={<Music />} />
-          <Route path="/photo" element={<Books />} />
+          <Route path="/shows" element={<Shows />} />
+          <Route path="/photo" element={<Photo />} />
         </Routes>
       </div>
     </Router>
