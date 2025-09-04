@@ -43,7 +43,7 @@ export default function Music() {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-bold text-gray-900">My Music</h2>
           <button
-            onClick={() => setShowForm(true)}
+            onClick={() => setOpen(true)}
             className="px-4 py-2 bg-gray-100 rounded-lg text-sm font-medium text-gray-800 hover:bg-gray-200 transition">
             + Upload Music
           </button>
@@ -112,7 +112,7 @@ export default function Music() {
               <div className="flex justify-end gap-2">
                 <button
                   type="button"
-                  // onClick={() => setShowForm(false)}
+                  onClick={() => setOpen(false)}
                   className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition">
                   Cancel
                 </button>
