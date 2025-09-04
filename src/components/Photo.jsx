@@ -13,6 +13,7 @@ export default function PhotoGallery() {
     { id: 6, src: '/images/city.jpg', alt: 'City' },
   ]);
   const navigate = useNavigate();
+
   const handleUpload = (e) => {
     const file = e.target.files[0];
     if (file) {

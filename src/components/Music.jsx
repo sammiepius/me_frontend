@@ -3,29 +3,44 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaPlayCircle } from 'react-icons/fa';
 
 export default function Music() {
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const albums = [
+  const [musics, setMusic] = useState([
     {
-      id: 'Atomic Habits',
+      // id: 'Atomic Habits',
       title: 'Back in Black',
       artist: 'Abaga',
-      cover: '',
+      cover: 'h',
     },
     {
-      id: '2',
+      // id: '2',
       title: '25',
       artist: 'Adele',
-      cover: '',
+      cover: 'k',
     },
     {
-      id: '3',
+      // id: '3',
       title: 'Random access',
       artist: 'Daft Punk',
-      cover: '',
+      cover: 'k',
     },
-  ];
+  ]);
+  const [open, setOpen] = useState(false);
+  const [newMusic, setNewMusic] = useState({
+    title: '',
+    artist: '',
+    cover: '',
+  });
+  const navigate = useNavigate();
+
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewMusic((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({newMusic});
+  };
 
   return (
     <div className="">
@@ -51,20 +66,20 @@ export default function Music() {
 
         {/* Book List */}
         <div className="grid grid-cols-3 gap-4">
-          {albums.map((album) => (
+          {musics.map((music, idx) => (
             <div
-              key={album.id}
+              key={music.idx}
               className="bg-white rounded-xl shadow-md p-3 flex flex-col items-center hover:shadow-lg transition">
               <img
-                src={album.cover}
-                alt={album.title}
+                src={music.cover}
+                alt={music.title}
                 className="w-28 h-40 object-cover rounded-md mb-3"
               />
               <h3 className="text-sm font-semibold text-gray-900 text-center">
-                {album.title}
+                {music.title}
               </h3>
               <p className="text-xs text-gray-600 text-center">
-                {album.artist}
+                {music.artist}
               </p>
               <FaPlayCircle />
             </div>
@@ -78,24 +93,24 @@ export default function Music() {
             <h3 className="text-lg font-bold mb-4 text-gray-900">
               Upload New Book
             </h3>
-            <form >
+            <form>
               <div className="mb-3">
                 <input
                   type="text"
                   name="title"
                   placeholder="Book Title"
-                  // value={newBook.title}
-                  // onChange={handleChange}
+                  value={newMusic.title}
+                  onChange={handleChange}
                   className="w-full border p-2 rounded"
                 />
               </div>
               <div className="mb-3">
                 <input
                   type="text"
-                  name="author"
+                  name="artist"
                   placeholder="Author"
-                  // value={newBook.author}
-                  // onChange={handleChange}
+                  value={newMusic.artist}
+                  onChange={handleChange}
                   className="w-full border p-2 rounded"
                 />
               </div>
@@ -104,8 +119,8 @@ export default function Music() {
                   type="text"
                   name="cover"
                   placeholder="Cover URL"
-                  // value={newBook.cover}
-                  // onChange={handleChange}
+                  value={newMusic.cover}
+                  onChange={handleChange}
                   className="w-full border p-2 rounded"
                 />
               </div>
@@ -118,6 +133,7 @@ export default function Music() {
                 </button>
                 <button
                   type="submit"
+                  onClick={handleSubmit}
                   className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
                   Add Book
                 </button>
