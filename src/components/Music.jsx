@@ -24,22 +24,23 @@ export default function Music() {
     },
   ]);
   const [open, setOpen] = useState(false);
-  const [newMusic, setNewMusic] = useState({
+  const [newMusic, setNewMusics] = useState({
     title: '',
     artist: '',
     cover: '',
   });
   const navigate = useNavigate();
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setNewMusic((prev) => ({ ...prev, [name]: value }));
+    setNewMusics((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({newMusic});
+    setMusic((prev) => [...prev, newMusic]);
+    setNewMusics({ title: '', artist: '', cover: '' });
+    setOpen(false);
   };
 
   return (
