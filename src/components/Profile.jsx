@@ -1,9 +1,18 @@
 import React from 'react';
+import { IoIosNotificationsOutline,IoIosSettings  } from 'react-icons/io';
+
 
 export default function Profile() {
   return (
     <div>
       <div className="min-h-80 dark:bg-slate-800 gap-6 flex items-center justify-center">
+        <div className="absolute top-0 right-0 size-16">
+          {/* <IoIosNotificationsOutline
+            className="absolute top-0 right-0 size-8"
+            style={{ color: 'white' }}
+          /> */}
+          <IoIosSettings className="absolute top-0 right-0 size-6" style={{ color: 'white' }}/>
+        </div>
         <div className=" dark:bg-gray-700 relative shadow-xl overflow-hidden hover:shadow-2xl group rounded-xl p-5 ">
           <div className="flex items-center gap-4">
             <img
