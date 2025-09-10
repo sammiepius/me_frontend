@@ -11,6 +11,7 @@ import Music from './components/music';
 import Books from './components/books';
 import Photo from './components/photo';
 import Shows from './components/shows';
+import Setting from './components/Setting';
 
 // import './App.css'
 
@@ -22,7 +23,7 @@ function App() {
     //   <hr />
     //   <Home />
     // </div>
-      <Router>
+    <Router>
       <div>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -33,6 +34,7 @@ function App() {
           <Route path="/books" element={<Books />} />
           <Route path="/shows" element={<Shows />} />
           <Route path="/photo" element={<Photo />} />
+          <Route path="/settings" element={<Setting />} />
         </Routes>
       </div>
     </Router>

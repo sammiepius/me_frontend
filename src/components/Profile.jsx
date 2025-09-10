@@ -1,7 +1,9 @@
 import React from 'react';
 import { IoIosNotificationsOutline, IoIosSettings } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="min-h-80 dark:bg-slate-800 gap-6 flex items-center justify-center">
@@ -28,6 +30,7 @@ export default function Profile() {
           </button>
           <button
             type="button"
+            onClick={() => navigate('/settings')}
             className="absolute rounded-full top-0 right-0 p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
             <span className="absolute -inset-1.5"></span>
             <span className="sr-only">View notifications</span>
