@@ -10,7 +10,7 @@ export default function Setting() {
     }
   };
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200 flex justify-center p-4">
+    <div className="min-h-screen bg-slate-800 text-gray-200 flex justify-center p-4">
       <div className="w-full max-w-3xl">
         {/* Tabs */}
         <div className="flex border-b border-gray-700 mb-6">
@@ -36,7 +36,7 @@ export default function Setting() {
 
         {/* Profile Info Tab */}
         {activeTab === 'profile' && (
-          <div className="bg-gray-800 rounded-2xl shadow-md p-6 space-y-6">
+          <div className="dark:bg-gray-700 rounded-2xl shadow-md p-6 space-y-6">
             <div>
               <h2 className="text-lg font-semibold">Personal Information</h2>
               <p className="text-sm text-gray-400 mb-4">
@@ -82,12 +82,9 @@ export default function Setting() {
                 placeholder="Username"
                 className="sm:col-span-2 p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />
-              <select className="sm:col-span-2 p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500">
-                <option>Pacific Standard Time</option>
-                <option>Central Standard Time</option>
-                <option>Eastern Standard Time</option>
-                <option>West Africa Time</option>
-              </select>
+              <textarea
+                placeholder="status"
+                className="sm:col-span-2 p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"></textarea>
             </div>
 
             {/* Save Button */}
@@ -101,7 +98,7 @@ export default function Setting() {
 
         {/* Security Tab */}
         {activeTab === 'security' && (
-          <div className="bg-gray-800 rounded-2xl shadow-md p-6">
+          <div className="dark:bg-gray-700 rounded-2xl shadow-md p-6">
             <h2 className="text-lg font-semibold">Change Password</h2>
             <p className="text-sm text-gray-400 mb-4">
               Update your password associated with your account.
