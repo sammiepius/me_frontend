@@ -2,6 +2,20 @@ import React, { useState, useEffect } from 'react';
 
 export default function Setting() {
   const [activeTab, setActiveTab] = useState('profile');
+  const [profile, setProfile] = useState([]);
+  const [password, setPassword] = useState([]);
+  const [newProfile, setNewProfile] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    username: '',
+    status: '',
+  });
+  const [newPassword, setNewPassword] = useState({
+    current_password: '',
+    new_password: '',
+    confirm_password: '',
+  });
   const [avatar, setAvatar] = useState(null);
 
   // Toast state
@@ -28,6 +42,15 @@ export default function Setting() {
 
   const handleSaveProfile = (e) => {
     e.preventDefault();
+    console.log(profile);
+    setProfile((prev) => [...prev, newProfile]);
+    setNewProfile({
+      firstname: '',
+      lastname: '',
+      email: '',
+      username: '',
+      status: '',
+    });
     simulateSave(() =>
       setToast({
         type: 'success',
@@ -38,6 +61,13 @@ export default function Setting() {
 
   const handleUpdatePassword = (e) => {
     e.preventDefault();
+    setPassword((prev) => [...prev, newPassword]);
+    setNewPassword({
+      current_password: '',
+      new_password: '',
+      confirm_password: '',
+    });
+    console.log(password);
     simulateSave(() =>
       setToast({
         type: 'success',
@@ -51,7 +81,15 @@ export default function Setting() {
       setAvatar(URL.createObjectURL(e.target.files[0]));
     }
   };
+  const handleProfileChange = (e) => {
+    const { name, value } = e.target;
+    setNewProfile((prev) => ({ ...prev, [name]: value }));
+  };
 
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setNewPassword((prev) => ({ ...prev, [name]: value }));
+  };
   return (
     <div className="min-h-screen bg-slate-800 text-gray-200 flex justify-center p-4">
       <div className="w-full max-w-3xl">
@@ -117,27 +155,43 @@ export default function Setting() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
+                onChange={handleProfileChange}
+                value={newProfile.firstname}
+                name="firstname"
                 placeholder="First name"
                 className="p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />
               <input
                 type="text"
+                onChange={handleProfileChange}
+                value={newProfile.lastname}
+                name="lastname"
                 placeholder="Last name"
                 className="p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />
               <input
                 type="email"
+                name="email"
+                onChange={handleProfileChange}
+                value={newProfile.email}
                 placeholder="Email address"
                 className="sm:col-span-2 p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />
               <input
                 type="text"
+                onChange={handleProfileChange}
+                name="username"
+                value={newProfile.username}
                 placeholder="Username"
                 className="sm:col-span-2 p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />
               <textarea
+                name="status"
+                value={newProfile.status}
                 placeholder="status"
-                className="sm:col-span-2 p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"></textarea>
+                onChange={handleProfileChange}
+                className="sm:col-span-2 p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
+              />
             </div>
 
             {/* Save Button with Spinner */}
@@ -145,6 +199,7 @@ export default function Setting() {
               <button
                 type="submit"
                 disabled={loading}
+                onClick={handleSaveProfile}
                 className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center justify-center">
                 {loading ? (
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -168,16 +223,25 @@ export default function Setting() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="password"
+                onChange={handlePasswordChange}
+                name="current_password"
+                value={newPassword.current_password}
                 placeholder="Current password"
                 className="w-full p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />
               <input
                 type="password"
+                onChange={handlePasswordChange}
+                name="new_password"
+                value={newPassword.new_password}
                 placeholder="New password"
                 className="w-full p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />
               <input
                 type="password"
+                onChange={handlePasswordChange}
+                name="confirm_password"
+                value={newPassword.confirm_password}
                 placeholder="Confirm password"
                 className="w-full p-2 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"
               />

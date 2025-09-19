@@ -44,7 +44,7 @@ export default function Login() {
             <a
               href="#"
               class="font-medium text-blue-600 hover:text-blue-500"
-              onClick={() => navigate('/create')}>
+              onClick={() => navigate('/signup')}>
               create an account
             </a>
           </p>

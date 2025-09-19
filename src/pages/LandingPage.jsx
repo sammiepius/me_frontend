@@ -10,7 +10,7 @@ export default function LandingPage() {
     <div className="container">
       {/* <img src={landingpage} alt="" /> */}
       <div className="submit-container1">
-        <div className="profile" onClick={() => navigate('/create')}>Create profile</div>
+        <div className="profile" onClick={() => navigate('/signup')}>Create profile</div>
         <div className="login" onClick={() => navigate('/login')}>Login</div>
       </div>
     </div>

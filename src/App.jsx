@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CreateProfile from './pages/signup/CreateProfile';
+import SignUp from './pages/signup/Signup';
 import Login from './pages/login/Login';
 import LandingPage from './pages/LandingPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -7,7 +7,7 @@ import Home from './components/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@coreui/coreui/dist/css/coreui.min.css';
 import Profile from './components/Profile';
-import Music from './components/music';
+import Music from './components/Music';
 import Books from './components/books';
 import Photo from './components/photo';
 import Shows from './components/shows';
@@ -29,7 +29,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/create" element={<CreateProfile />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/music" element={<Music />} />
           <Route path="/books" element={<Books />} />
           <Route path="/shows" element={<Shows />} />
