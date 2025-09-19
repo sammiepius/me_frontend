@@ -3,17 +3,17 @@ import { FaArrowLeft } from 'react-icons/fa';
 import logo from '../../assets/logo.jpg';
 import password_icon from '../../assets/password.png';
 import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../../api';
 
 export default function SignUp() {
   const [form, setForm] = useState({
-    names: '',
+    name: '',
     // username: '',
     email: '',
     password: '',
     comfirm_password: '',
   });
   const [message, setMessage] = useState('');
-  // const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const navigate = useNavigate();
 
   const handleInput = (e) => {
@@ -32,18 +32,27 @@ export default function SignUp() {
   //   console.log(form);
   // };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (form.comfirm_password !== form.password) {
       setMessage('❌ Passwords do not match');
       return;
     }
     // Demo only: in real case send to backend
-    setMessage(`✅ Registered: ${form.names} (${form.email})`);
-    console.log('Form data:', form);
+    try {
+      const res = await registerUser(form);
+      setMessage(res.data.message);
+      navigate('/login');
+      console.log(res.data);
+    } catch (err) {
+      setMessage(err.response?.data?.error || 'something went wrong');
+    }
 
-    // reset
-    setForm({ names: '', email: '', password: '', comfirm_password: '' });
+    setMessage(`✅ Registered: ${form.name} (${form.email})`);
+
+
+    // // reset
+    // setForm({ name: '', email: '', password: '', comfirm_password: '' });
   };
 
   return (
@@ -86,9 +95,9 @@ export default function SignUp() {
               <div className="mt-1 relative rounded-md shadow-sm">
                 <input
                   // id="name"
-                  name="names"
+                  name="name"
                   placeholder="John Doe"
-                  value={form.names}
+                  value={form.name}
                   type="text"
                   onChange={handleInput}
                   required=""
@@ -186,9 +195,6 @@ export default function SignUp() {
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                 />
               </div>
-              {/* {confirmPasswordError && (
-                <p style={{ color: 'red' }}>{confirmPasswordError}</p>
-              )} */}
             </div>
 
             <div className="mt-6">
