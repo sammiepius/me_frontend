@@ -13,23 +13,10 @@ export default function Login() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await loginUser(form);
-  //     setMessage(res.data.message);
-  //     navigate('/home');
 
-  //     //jwt
-  //   } catch (err) {
-  //     setMessage(err.response?.data?.error || 'something went wrong');
-  //     console.log(form);
-  //   }
-  //   //
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Demo only: in real case send to backend
+    
     try {
       const res = await loginUser(form);
       setMessage(res.data.message);
